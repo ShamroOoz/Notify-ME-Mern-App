@@ -3,7 +3,7 @@ import express from "express";
 import mongoose from "mongoose";
 import cors from "cors";
 import userRouter from "./routes/userRouter.js";
-// import noteRouter from "./routes/noteRouter.js";
+import noteRouter from "./routes/noteRouter.js";
 
 const app = express();
 app.use(cors());
@@ -11,7 +11,7 @@ app.use(express.json());
 
 // Routes
 app.use("/users", userRouter);
-// app.use("/api/notes", noteRouter);
+app.use("/api/notes", noteRouter);
 
 // Connect to MongoDB
 const URI = process.env.MONGODB_URL;
