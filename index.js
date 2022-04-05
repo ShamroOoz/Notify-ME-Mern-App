@@ -10,7 +10,7 @@ app.use(cors());
 app.use(express.json());
 
 // Routes
-app.get("/", () => res.send("Welcome to Notify App Backend Panel ✈ "));
+app.get("/", (req, res) => res.send("Welcome to Notify App Backend Panel ✈ "));
 app.use("/api/users", userRouter);
 app.use("/api/notes", noteRouter);
 
